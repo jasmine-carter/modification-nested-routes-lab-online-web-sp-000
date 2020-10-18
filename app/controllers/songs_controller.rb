@@ -13,9 +13,11 @@ class SongsController < ApplicationController
   end
 
   def show
-    binding.pry
-    if params[:artist_id]
-      @song = Artist.find(params[:artist_id]).songs.find(params[:id])
+    
+    if params[:artist_id] && Artist.exists?(params[:artist_id])
+      if Artist.find(params[:artist_id]).songs.exists?(params:id)
+        @song = Artist.find(params[:artist_id]).songs.find(params[:id])
+      else @song =nil
       #@artist = Artist.find_by(id: params[:artist_id])
       #@song = @artist.songs.find_by(id: params[:id])
       if @song.nil?
