@@ -32,7 +32,6 @@ class SongsController < ApplicationController
           @song.artist = @artist
           @song.save
         end
-    binding.pry
     else
       @song = Song.new
     end
