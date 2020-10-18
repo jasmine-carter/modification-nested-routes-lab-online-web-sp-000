@@ -26,13 +26,7 @@ class SongsController < ApplicationController
 
   def new
     binding.pry
-    if params[:artist_id] #check to see if params include artist id
-      #  if Artist.exists(params[:artist_id]) #check to see if artist exists in db
-          @song = Song.new
-          #redirect to artist_song_path
-    else
-      @song = Song.new
-    end
+    @song = Song.new
   end
 
   def create
@@ -74,3 +68,4 @@ class SongsController < ApplicationController
     params.require(:song).permit(:title, :artist_name)
   end
 end
+
