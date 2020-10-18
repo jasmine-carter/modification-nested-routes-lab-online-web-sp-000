@@ -30,6 +30,7 @@ class SongsController < ApplicationController
           @song = Song.new
           @artist = Artist.find_by(id: params[:artist_id])
           @song.artist = @artist
+          @song.save
         end
     binding.pry
     else
