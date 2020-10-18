@@ -30,17 +30,6 @@ class SongsController < ApplicationController
       redirect_to artists_path, alert: "Artist not found."
     else
       @song = Song.new(artist_id: params[:artist_id])
-        #if Artist.exists?(params[:artist_id])
-        #  @song = Song.new
-        #  @artist = Artist.find_by(id: params[:artist_id])
-        #  @song.artist = @artist
-        #  @song.save
-        #  redirect_to artist_path(@artist)
-        #else
-        #  redirect_to artists_path
-        #end
-    #else
-      #@song = Song.new
     end
   end
 
