@@ -33,7 +33,7 @@ class SongsController < ApplicationController
           @song.save
           redirect_to artist_path(@artist)
         else
-          redirect_to artists_path  
+          redirect_to artists_path
         end
     else
       @song = Song.new
@@ -80,4 +80,3 @@ class SongsController < ApplicationController
     params.require(:song).permit(:title, :artist_name)
   end
 end
-
