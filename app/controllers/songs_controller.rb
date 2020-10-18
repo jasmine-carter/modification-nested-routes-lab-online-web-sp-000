@@ -31,6 +31,7 @@ class SongsController < ApplicationController
           @artist = Artist.find_by(id: params[:artist_id])
           @song.artist = @artist
           @song.save
+          redirect_to artists_path(@artist)
         end
     else
       @song = Song.new
